@@ -1,14 +1,16 @@
 import React from "react";
 
+import Header from "../header";
+
 import './App.css';
+import RandomPlanet from "../random-planet";
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <Header/>
+      <RandomPlanet/>
     </div>
   );
 }
