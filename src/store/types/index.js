@@ -1,6 +1,0 @@
-
-export const SHOW_LOADER = "SHOW_LOADER";
-
-export const LOAD_PLANET = "LOAD_PLANET";
-
-export const SHOW_ERROR_MESSAGE = "SHOW_ERROR_MESSAGE";

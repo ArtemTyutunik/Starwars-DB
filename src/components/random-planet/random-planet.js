@@ -38,7 +38,6 @@ const RandomPlanet = () => {
     const ErrorMessage = isError? <ErrorIndicator/>: null;
     const Loading = isLoading? <Spinner/>: null;
     const Content = !(isLoading || isError)? <VisibleContent planet = {planet}/>: null
-
     return (
         <div className="random-planet jumbotron rounded">
             {ErrorMessage}

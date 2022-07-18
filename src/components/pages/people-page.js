@@ -1,9 +1,8 @@
-import {useNavigate} from "react-router-dom";
-
+import {useState} from "react";
 import Row from "../row/row";
 import {PeopleList} from "../sw-components/item-list";
 import PersonDetails from "../sw-components/person-details";
-import {useState} from "react";
+
 
 
 
