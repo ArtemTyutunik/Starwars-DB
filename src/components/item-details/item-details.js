@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 
 import './item-details.css'
 import DetailsCard from "./details-card";
+import ErrorIndicator from "../error-indicator";
+import Spinner from "../spinner";
 
 export const Record = ({data, field, label}) => {
 
@@ -14,7 +16,9 @@ export const Record = ({data, field, label}) => {
 }
 
 const ItemDetails = ({children, itemId, getData}) => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false)
 
     useEffect(() =>{
         updatePerson();
@@ -24,16 +28,33 @@ const ItemDetails = ({children, itemId, getData}) => {
         if (!itemId) {
             return;
         }
+        setIsLoading(true)
         getData(itemId)
-            .then(data => setData(data))
+            .then(data => itemUpdated(data))
+            .catch(() => setIsError(true))
+    }
 
+    const itemUpdated =  data => {
+        setIsLoading(false)
+        setData(data)
     }
 
     if(!data){
         return <span>Select item</span>
     }
 
-    return <DetailsCard children={children} data={data}/>
+
+    const showErrorMessage = isError?   <ErrorIndicator/> : null;
+    const showLoading = isLoading? <Spinner/>: null;
+    const showContent = !(isLoading || isError)? <DetailsCard children={children} data={data}/>: null
+
+    return (
+        <>
+            {showErrorMessage}
+            {showLoading}
+            {showContent}
+        </>
+    )
 }
 
 export default ItemDetails;
