@@ -63,7 +63,8 @@ const _transformPeople = (data) => {
         skinColor: data.skin_color,
         eyeColor: data.eye_color,
         birthYear: data.birth_year,
-        imageUrl: _getPersonImage(id)
+        imageUrl: _getPersonImage(id),
+        gender: data.gender
     }
 }
 
@@ -101,6 +102,8 @@ const _extractId = (item) => {
     const idRegExp = /\/([0-9]*)\/$/;
     return item.url.match(idRegExp)[1];
 }
+
+
 
 
 const _getPersonImage = (id) => `${_imageBase}/characters/${id}.jpg`;

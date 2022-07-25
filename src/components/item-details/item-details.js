@@ -34,6 +34,7 @@ const ItemDetails = ({children, itemId, getData}) => {
             .catch(() => setIsError(true))
     }
 
+
     const itemUpdated =  data => {
         setIsLoading(false)
         setData(data)

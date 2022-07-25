@@ -7,7 +7,10 @@ import {getPerson} from "../../api";
 
     return (
         <ItemDetails getData= {getData} itemId={itemId}>
-            <Record field= "name" label = "Name: "/>
+            <Record field= "birthYear" label = "Birth year: "/>
+            <Record field= "height" label = "Height: "/>
+            <Record field= "mass" label = "Mass: "/>
+            <Record field= "gender" label = "Gender: "/>
         </ItemDetails>
     )
 

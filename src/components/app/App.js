@@ -14,7 +14,7 @@ import StarshipPage from "../pages/starship-page";
 function App() {
 
   return (
-    <div className="App">
+    <div className="App app-container">
       <Header/>
       <RandomPlanet/>
 
