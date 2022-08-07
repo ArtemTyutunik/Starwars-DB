@@ -9,7 +9,9 @@ const ListItems = ({onItemSelected, data}) => {
       return (
           <li className="list-group-item"
               key={id}
-               onClick={() => onItemSelected(id)}>
+               onClick={() => {
+                   onItemSelected(id);
+               }}>
              {name}
           </li>
       )

@@ -2,13 +2,11 @@ import React from "react";
 import './random-planet.css'
 
 const VisibleContent = ({planet}) => {
-    const {id, name, population, rotationPeriod, diameter, climate, gravity, terrain} = planet;
+    const { imageUrl, name, population, rotationPeriod, diameter, climate, gravity, terrain} = planet;
     return (
         <div className='random-planet-wrapper'>
             <img className="planet-image"
-                 src={id == 1
-                     ? 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Tatooine_%28fictional_desert_planet%29.jpg/220px-Tatooine_%28fictional_desert_planet%29.jpg'
-                     : `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+                 src={imageUrl}
                  alt="planet" />
             <div>
                 <h4>{name}</h4>

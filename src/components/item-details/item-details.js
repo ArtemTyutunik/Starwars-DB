@@ -15,7 +15,7 @@ export const Record = ({data, field, label}) => {
     )
 }
 
-const ItemDetails = ({children, itemId, getData}) => {
+const ItemDetails = ({children, itemId, getData, onButtonClick}) => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
@@ -47,8 +47,8 @@ const ItemDetails = ({children, itemId, getData}) => {
 
     const showErrorMessage = isError?   <ErrorIndicator/> : null;
     const showLoading = isLoading? <Spinner/>: null;
-    const showContent = !(isLoading || isError)? <DetailsCard children={children} data={data}/>: null
-
+    const showContent = !(isLoading || isError)?
+        <DetailsCard children={children} data={data}  onButtonClick = {onButtonClick}/>: null
     return (
         <>
             {showErrorMessage}

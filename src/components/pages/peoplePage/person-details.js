@@ -1,12 +1,12 @@
-import ItemDetails, {Record} from "../item-details/item-details";
-import withApiService from "../hoc/withApiService";
-import {getPerson} from "../../api";
+import ItemDetails, {Record} from "../../item-details/item-details";
+import withApiService from "../../hoc/withApiService";
+import {getPerson} from "../../../api";
 
 
- const PersonDetails = ({getData, itemId}) => {
+ const PersonDetails = ({getData, itemId, onButtonClick}) => {
 
     return (
-        <ItemDetails getData= {getData} itemId={itemId}>
+        <ItemDetails getData= {getData} itemId={itemId} onButtonClick = {onButtonClick}>
             <Record field= "birthYear" label = "Birth year: "/>
             <Record field= "height" label = "Height: "/>
             <Record field= "mass" label = "Mass: "/>

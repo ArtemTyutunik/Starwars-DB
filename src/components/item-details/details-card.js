@@ -1,14 +1,15 @@
 import React from "react";
 
-const DetailsCard = ({data, children}) => {
+const DetailsCard = ({data, children, onButtonClick}) => {
+    const {name, imageUrl, id} = data
     return (
         <div className="item-details card">
             <img className="item-image"
-                 src={data.imageUrl}
+                 src={imageUrl}
                  alt="item"/>
 
             <div className="card-body">
-                <h4>{data.name}</h4>
+                <h4>{name}</h4>
                 <ul className="list-group list-group-flush">
                     {
                         React.Children.map(children, (child) => {
@@ -16,6 +17,12 @@ const DetailsCard = ({data, children}) => {
                         })
                     }
                 </ul>
+                <button type="button"
+                        className="btn btn-primary"
+                        onClick={() => onButtonClick(id)}>
+                    See details
+                </button>
+
             </div>
         </div>
     )

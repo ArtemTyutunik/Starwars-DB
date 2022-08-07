@@ -88,12 +88,12 @@ const _transformStarship = data => {
     return {
         id,
         name: data.name,
-        population: data.population,
-        rotationPeriod: data.rotation_period,
-        diameter: data.diameter,
-        climate: data.climate,
-        gravity: data.gravity,
-        terrain: data.terrain,
+        model: data.model,
+        passengers: data.passengers,
+        length: data.length,
+        crew: data.crew,
+        MGLT: data.MGLT,
+        consumables: data.consumables,
         imageUrl: _getStarshipImage(id)
     }
 }
@@ -103,11 +103,24 @@ const _extractId = (item) => {
     return item.url.match(idRegExp)[1];
 }
 
+const createPlanetImageUrl = id => {
+    switch (id){
+        case '1': return 'https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg'
+        case '20': return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl60CYC2pstfUhNH6qY5K3UoxvNmd_uvq1VQ&usqp=CAU'
+        default: return `${_imageBase}/planets/${id}.jpg`
+    }
+}
 
-
-
+const createStarshipsImageUrl = id => {
+    switch (id){
+        case '2': return 'https://starforge.info/wp-content/uploads/2019/7/image-610.jpg';
+        case '3': return 'https://cdn-3d.niceshops.com/upload/image/product/large/default/revell-model-set-imperial-star-destroyer-1-pc-311143-en.jpg'
+        case '17': return 'https://cdna.artstation.com/p/assets/images/images/044/188/898/large/robert-bonchune-rebel-trnsprt-xwings-away-rb.jpg?1639339017'
+        default: return  `${_imageBase}/starships/${id}.jpg`;
+    }
+}
 const _getPersonImage = (id) => `${_imageBase}/characters/${id}.jpg`;
 
-const _getPlanetImage = (id) => `${_imageBase}/planets/${id}.jpg`;
+const _getPlanetImage = (id) => createPlanetImageUrl(id);
 
-const _getStarshipImage  = (id) => `${_imageBase}/starships/${id}.jpg`;
+const _getStarshipImage  = (id) => createStarshipsImageUrl(id);
