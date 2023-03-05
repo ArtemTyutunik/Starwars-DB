@@ -1,4 +1,3 @@
-
 import './row.css'
 const Row = ({left, right}) => {
     return (

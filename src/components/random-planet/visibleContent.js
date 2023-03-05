@@ -1,8 +1,15 @@
-import React from "react";
 import './random-planet.css'
 
 const VisibleContent = ({planet}) => {
-    const { imageUrl, name, population, rotationPeriod, diameter, climate, gravity, terrain} = planet;
+    const { imageUrl,
+        name,
+        population,
+        rotationPeriod,
+        diameter,
+        climate,
+        gravity,
+        terrain} = planet;
+
     return (
         <div className='random-planet-wrapper'>
             <img className="planet-image"

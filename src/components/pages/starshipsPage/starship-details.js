@@ -4,7 +4,6 @@ import {getStarship} from "../../../api";
 
 
 const StarshipDetails = ({getData, itemId, onButtonClick}) => {
-
     return (
         <ItemDetails getData= {getData} itemId={itemId} onButtonClick={onButtonClick}>
             <Record field= "name" label = "Name: "/>
@@ -13,8 +12,6 @@ const StarshipDetails = ({getData, itemId, onButtonClick}) => {
             <Record field= "passengers" label = "Passengers: "/>
         </ItemDetails>
     )
-
-
 }
 
 

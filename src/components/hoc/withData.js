@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
 
@@ -7,28 +7,25 @@ export const withData = (View) => (props) => {
         const [isError, setIsError] = useState(false);
         const [data, setData]  = useState(null)
 
-
-        const {getData} = props;
-
         useEffect(() => {
-                updateItem()
-        }, [getData])
+            updateItem()
+        }, [props.getData])
 
-        const updateItem = () => {
-                getData()
-                    .then(data=> {
-                        setIsLoading(false)
-                        setIsError(false)
-                        setData(data)
-                    })
-        }
+        const updateItem = useCallback(() => {
+            props.getData()
+                .then( data => {
+                    setIsLoading(false)
+                    setIsError(false)
+                    setData(data)
+                })
+        }, [props.getData])
 
        if (isLoading) {
-               return <Spinner/>
+           return <Spinner/>
        }
 
        if (isError) {
-               return <ErrorIndicator/>
+           return <ErrorIndicator/>
        }
 
        if (!(isLoading || isError)){

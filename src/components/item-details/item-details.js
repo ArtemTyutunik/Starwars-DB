@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from "react";
 
-import './item-details.css'
 import DetailsCard from "./details-card";
 import ErrorIndicator from "../error-indicator";
 import Spinner from "../spinner";
+import './item-details.css'
 
 export const Record = ({data, field, label}) => {
-
     return (
         <li className="list-group-item">
             <span className="term">{label}</span>
