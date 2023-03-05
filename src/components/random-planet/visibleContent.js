@@ -15,7 +15,7 @@ const VisibleContent = ({planet}) => {
             <img className="planet-image"
                  src={imageUrl}
                  alt="planet" />
-            <div>
+            <div className={'random-planet-details'}>
                 <h4>{name}</h4>
                 <div className='d-flex flex-row'>
                     <ul className="list-group list-group-flush">

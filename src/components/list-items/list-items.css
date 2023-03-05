@@ -9,3 +9,9 @@
 .item-list .list-group-item:hover {
     background-color: #444;
 }
+
+@media screen and (max-width: 768px){
+    .list-group-item{
+        margin-bottom: 10px;
+    }
+}

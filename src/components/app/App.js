@@ -6,7 +6,6 @@ import {
     Home,
     PeoplePage,
     PlanetPage,
-    StarshipPage,
     PersonDetails,
     PlanetDetails,
     StarshipDetails} from "../pages/";
@@ -28,7 +27,6 @@ function App() {
             <Route path= '/planets/:id' element = {<PlanetDetails/>} />
             <Route path= '/starships/:id' element = {<StarshipDetails/>}/>
             <Route path='/planets' element = {<PlanetPage/>}/>
-            <Route path='/starships' element = {<StarshipPage/>}/>
         </Routes>
 
     </div>

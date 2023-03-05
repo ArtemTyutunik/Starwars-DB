@@ -16,9 +16,6 @@ const Header = () => {
                 <li>
                     <Link to="/planets/">Planets</Link>
                 </li>
-                <li>
-                    <Link to="/starships/">Starships</Link>
-                </li>
             </ul>
         </div>
     );
