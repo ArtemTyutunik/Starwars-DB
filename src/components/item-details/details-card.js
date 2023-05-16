@@ -1,7 +1,7 @@
 import React from "react";
 
-const DetailsCard = ({data, children, onButtonClick}) => {
-    const {name, imageUrl, id} = data
+const DetailsCard = ({data, children}) => {
+    const {name, imageUrl} = data
     return (
         <div className="item-details card">
             <img className="item-image"
@@ -17,12 +17,6 @@ const DetailsCard = ({data, children, onButtonClick}) => {
                         })
                     }
                 </ul>
-                <button type="button"
-                        className="btn btn-primary"
-                        onClick={() => onButtonClick(id)}>
-                    See details
-                </button>
-
             </div>
         </div>
     )
